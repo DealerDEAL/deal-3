@@ -10,34 +10,33 @@ int main()
      output = fopen("endgame.txt","w");
      int  OriginalNumber = 0;
 	 int  EnteredNumber = 0;
-	 int  CountNumber =0;
+	 int  Count_Number =0;
 	 char  newline;
-     fscanf(num,"%d",&OriginalNumber);
      bool completed = false;
      fprintf(output,"entered number/n");
-     do{
-     	cin >> EnteredNumber;
-     	if (scanf("%d%c" &EnteredNumber, &newline) EnteredNumber>=1 || newline != '\n' || ){
+     while(completed == false) {
+         cout<<"Entere Number";
+     	 cin >> EnteredNumber;
+     	 fscanf(num,"%d",&OriginalNumber);
          	if (EnteredNumber > OriginalNumber) {
-             fprintf(output,&EnteredNumber"/n");
-			 cout <<"enter a lower number";
-			 CountNumber++;
+                fprintf(output,"%d",EnteredNumber);
+			    cout <<"enter a lower number";
+			    Count_Number++;
          	} 
-			 else if EnteredNumber < OriginalNumber) {
-			fprintf(output,&EnteredNumber"/n");
-			cout <<"enter a larger number";
-			CountNumber++;
+			if (EnteredNumber < OriginalNumber) {
+			    fprintf(output,"%d",EnteredNumber);
+		        cout <<"enter a larger number";
+			    Count_Number++;
 			}
-		 	else if (EnteredNumber == OriginalNumber){
-			fprintf(output,&EnteredNumber"/n");
-			cout <<"comleted";
-			CountNumber++;
-			completed = true;
+			if (EnteredNumber == OriginalNumber){
+			    fprintf(output,"%d",EnteredNumber);
+			    cout <<"comleted";
+			    Count_Number++;
+			    completed = true;
 			}
 		}
-		else
-		cout <<"eror, plese try again";
-     }while(completed != true);
-     fprintf(output,"total numbers entered:",&CountNumber);
+     fprintf(output,"total numbers entered: %d", Count_Number);
+     fclose(num);
+     fclose(output);
      return 0;
 }
