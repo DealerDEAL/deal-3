@@ -1,0 +1,36 @@
+#include <iostream>
+#include <stdio.h>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+   FILE amount_Max;
+   FILE limit;
+   int enteren_Number;
+   int given_Number;
+   int max_Number;
+   int counter=10;
+   int amount_Number;
+   int sum_even = 0;
+   
+   limit = fopen("predel.txt", "r");
+   amount_Max = fopen("kolmax.txt", "w");
+   cout<<"enter number\n";
+   cin<<enteren_Number;
+   fscanf(limit,"%d",&max_Number);
+   do {
+       sum_even =sum_even + (enteren_Number % counter);
+       if(sum_even>max_Number){
+           fprintf(amount_Max,"amountnumber=\n",amount_Number);
+           fprintf(amount_Max,"max even number=\n",sum_even);
+           return 0;
+       }
+       enteren_Number=enteren_Number / counter;
+       counter=counter * 10;
+       amount_Number++;
+   }while(enteren_Number<counter)
+   return 0;
+
+}
